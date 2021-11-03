@@ -1,0 +1,55 @@
+CẶP SỐ NGUYÊN TỐ
+
+Bài làm tốt nhất
+Cho số nguyên dương N>2. Hãy đưa ra cặp số nguyên tố p, q đầu tiên tìm được có tổng đúng bằng N. Ví dụ N = 6 ta có cặp số nguyên tố đầu tiên là 3 + 3 =6.
+
+Trong trường hợp không tìm thấy đáp án thì không in ra gì cả.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test là một số chẵn N.
+T, N thỏa mãn ràng buộc : 1≤T≤100; 4≤N≤10000.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng. Nếu không có cặp số nào thỏa mãn thì không in ra gì cả. 
+Input:
+
+Output:
+
+2
+74
+1024
+
+3  71
+3  1021
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+int nto(int n){
+	if(n<2){
+		return 0;
+	}
+	for(int i=2;i<=sqrt(n);i++){
+		if(n%i==0){
+			return 0;
+		}
+	}
+	return 1;
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		long long n;
+		cin>>n;
+		for(int i=2;i<n;i++){
+			if(nto(i)&&nto(n-i)){
+				cout<<i<<" "<<n-i;
+				break;
+			}
+		}
+		cout<<endl;
+	}
+}
