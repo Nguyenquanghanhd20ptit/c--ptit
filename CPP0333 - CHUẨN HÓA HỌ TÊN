@@ -1,0 +1,56 @@
+CHUẨN HÓA HỌ TÊN
+
+Bài làm tốt nhất
+Tên người dùng sẽ được chuẩn hóa theo nguyên tắc tên được viết sau cùng, phân tách với phần tên đệm và tên bởi dấu phẩy. Các chữ cái nằm trong tên đều được viết hoa; chữ cái đầu tiên của tên đệm và họ được viết hoa, các chữ cái còn lại viết thường.
+
+Input
+
+Chỉ có một xâu họ tên độ dài không quá 100
+
+Output
+
+Ghi ra xâu họ tên đã chuẩn hóa theo mẫu trong ví dụ
+
+Ví dụ
+
+Input
+
+Output
+
+ngUyeN   vAN Nam
+
+Nguyen Van, NAM
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+void chuanhoa(string &s){
+	s[0]=toupper(s[0]);
+	for(int i=1;i<s.length();i++){
+		s[i]=tolower(s[i]);
+	}
+}
+int main(){
+	string s;
+	getline(cin>>ws,s);
+	vector<string> v;
+	string hanh;
+	stringstream ss(s);
+	while(ss>>hanh){
+		v.push_back(hanh);
+	}
+	for(int i=0;i<v.size()-1;i++){
+		chuanhoa(v[i]);
+		if(i==v.size()-2){
+			cout<<v[i]<<", ";
+		}
+		else {
+			cout<<v[i]<<" ";
+		}
+	}
+	string x=v[v.size()-1];
+	for(int i=0;i<x.length();i++){
+		x[i]=toupper(x[i]);
+	}
+	cout<<x;
+}
