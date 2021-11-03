@@ -1,0 +1,41 @@
+LOẠI BỎ TỪ TRONG XÂU
+
+Bài làm tốt nhất
+Viết chương trình cho phép nhập vào một chuỗi và từ cần loại bỏ khỏi chuỗi. Thực hiện loại bỏ từ và in ra kết quả
+
+Trong đó:
+
+INPUT
+
+- Hàng thứ nhất là chuỗi ban đầu
+
+- Hàng tiếp theo là từ cần loại bỏ
+
+OUTPUT
+
+- Chuỗi kết quả
+
+Input
+
+Output
+
+Toi Yeu PTIT
+Toi
+
+Yeu PTIT
+
+bai lam:
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+		string s;
+		getline (cin,s);
+		string s1; cin>>s1;
+		stringstream ss(s);
+		string word;
+		while(ss>>word){
+		    if(s1 != word){
+		    	cout<<word<<" ";
+			}
+		}
+}
