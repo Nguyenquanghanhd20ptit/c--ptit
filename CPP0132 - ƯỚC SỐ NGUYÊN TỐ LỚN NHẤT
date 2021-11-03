@@ -1,0 +1,57 @@
+ ƯỚC SỐ NGUYÊN TỐ LỚN NHẤT
+
+Bài làm tốt nhất
+Cho số nguyên dương N. Hãy đưa ra ước số nguyên tố lớn nhất của N.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là  một số nguyên dương N được ghi trên một dòng.
+T, N thỏa mãn ràng buộc: 1≤T≤100; 2≤N≤1010.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2
+
+315
+
+31
+
+7
+
+31
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+void ptich(long long n){
+	long long x=0;
+	for(int i=2;i<=sqrt(n);i++){
+		while(n%i==0){
+			if(i>x){
+				x=i;
+			}
+			n/=i;
+		}
+	}
+	if(n!=1){
+		x=max(x,n);
+		n=1;
+	}
+	cout<<x;
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		long long n;
+		cin>>n;
+		long long a=1;
+		ptich(n);
+		cout<<endl;
+	}
+}
