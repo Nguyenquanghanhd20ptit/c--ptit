@@ -1,0 +1,61 @@
+LIỆT KÊ XÂU NHỊ PHÂN
+
+Bài làm tốt nhất
+Cho số tự nhiên N. Hãy đưa ta các xâu nhị phân có độ dài N.
+
+ Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test là một số N được viết trên 1 dòng.
+T, N thỏa mãn ràng buộc :1 ≤ T, N ≤ 20.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input
+
+Output
+
+2
+2
+3
+
+00  01  10 11
+000 001 010 011 100 101 110 111
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+int n,a[100],x;
+void khoitao(){
+	for(int i=1;i<=n;i++){
+		a[i]=0;
+	}
+}
+void sinh(){
+	int j=n;
+	while(j>=1&&a[j]==1){
+		a[j]=0;
+		j--;
+	}
+	if(j==0) x=0;
+	else {
+		a[j]=1;
+	}
+}
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+	cin>>n;
+	khoitao();
+	x=1;
+	while(x==1){
+		for(int i=1;i<=n;i++){
+			cout<<a[i];
+		}
+		cout<<" ";
+		sinh();
+	}
+	cout<<endl;
+  }
+}
