@@ -1,0 +1,49 @@
+ĐỊA CHỈ EMAIL - 1
+
+Bài làm tốt nhất
+Địa chỉ email của cán bộ PTIT được cấp theo nguyên tắc ghép tên với chữ cái đầu tiên của họ và tên đệm. Viết chương trình cho phép tạo các địa chỉ email theo tên cán bộ
+
+Input
+
+Chỉ có một xâu ký tự họ tên độ dài không quá 100. 
+
+Output
+
+Ghi ra địa chỉ email theo mẫu trong ví dụ. 
+
+Ví dụ
+
+Input
+
+Output
+
+Nguyen vAn nAM
+
+namnv@ptit.edu.vn
+
+bai lam:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	
+     string s;
+		getline(cin,s);
+		for(int i=0;i<s.length();i++){
+			s[i]=tolower(s[i]);
+		}		
+		string word;
+		stringstream ss(s);
+		vector<string> v;
+		while(ss>>word){
+			v.push_back(word);
+		}
+		cout<<v[v.size()-1];
+		for(int i=0;i<v.size()-1;i++){
+			cout<<v[i][0];
+		}
+		cout<<"@ptit.edu.vn";
+		return 0;
+}
+
