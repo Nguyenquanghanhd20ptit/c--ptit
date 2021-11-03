@@ -1,0 +1,83 @@
+ÌM KIẾM NHỊ PHÂN
+
+Bài làm tốt nhất
+Cho mảng A[] gồm n phần tử đã được sắp xếp. Hãy đưa ra 1 nếu X có mặt trong mảng A[], ngược lại đưa ra -1.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test gồm hai dòng: dòng thứ nhất đưa vào n, X là số các phần tử của mảng A[] và số X cần tìm; dòng tiếp theo đưa vào n số A[i] (1≤i≤n) các số được viết cách nhau một vài khoảng trống.
+T, n, A, X thỏa mãn ràng buộc: 1≤T≤100; 1≤N, X, A[i] ≤106.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2 
+5  16
+9  7  2  16  4
+7  98
+1  22  57  47  34  18  66
+
+1
+-1
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+
+int main (){
+	int t;
+	cin>>t;
+	while(t--){
+		int n,x;
+		cin>>n>>x;
+		int a[n+1];
+		for(int i=1;i<=n;i++){
+			cin>>a[i];
+		}
+	auto it=lower_bound(a,a+n,x);
+	if(*it==x){
+	cout<<1;
+} 
+   else cout<<-1;
+    cout<<endl;
+	}
+}
+
+cach 2:
+#include<bits/stdc++.h>
+using namespace std;
+bool kt(int a[],int n,int x){
+		int r=n,l=1;
+		while(l<=r){
+			int m =(r+l)/2;
+			if(a[m]==x){
+				return true;
+			}
+			else if(a[m]>x){
+				r=m-1;
+			}
+			else l=m+1;
+		}
+		return false;
+}
+int main (){
+	int t;
+	cin>>t;
+	while(t--){
+		int n,x;
+		cin>>n>>x;
+		int a[n+1];
+		for(int i=1;i<=n;i++){
+			cin>>a[i];
+		}
+	if(kt(a,n,x)){
+		cout<<1;
+	}
+    else cout<<-1;
+    cout<<endl;
+	}
+}
