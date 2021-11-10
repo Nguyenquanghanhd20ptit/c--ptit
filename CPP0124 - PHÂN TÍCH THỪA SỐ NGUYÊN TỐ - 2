@@ -1,0 +1,71 @@
+ PHÂN TÍCH THỪA SỐ NGUYÊN TỐ - 2
+
+Bài làm tốt nhất
+Cho số nguyên dương n (2<=n<=10^9), hãy phân tích n ra thừa số nguyên tố.
+
+Dữ liệu:
+
+Một dòng duy nhất chứa số n.
+
+Kết quả:
+
+Mỗi dòng ghi một thừa số nguyên tố và số mũ tương ứng cách nhau bởi dấu cách.
+
+Các thừa số nguyên tố in ra theo thứ tự tăng dần.
+
+Ví dụ:
+
+ 
+
+Input
+
+Output
+
+4
+
+2 2
+
+ 
+
+Input
+
+Output
+
+168
+
+2 3
+
+3 1
+
+7 1
+
+bai lam:
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void pt(int n){
+	int dem=0,a;
+	for(int i=2;i<=sqrt(n);i++){
+		while(n%i==0){
+			dem++;
+			n/=i;
+			
+		}
+		if(dem>0){
+			cout <<i<<" "<<dem<<" "<<endl;
+		}
+		dem=0;
+	}
+	if(n!=1){
+		cout << n<<" "<<1<<endl;
+		n=1;
+	}
+}
+	
+int main(){
+		int n;
+		cin >>n;
+		pt (n);
+	return 0;
+}
