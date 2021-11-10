@@ -1,0 +1,46 @@
+ĐẾM TỪ
+
+Bài làm tốt nhất
+Một từ được hiểu là dãy các ký tự liên tiếp không chứa ký tự space, ‘\t’, ‘\n’, Cho xâu ký tự S có các ký tự space, ‘\t’, ‘\n’, hãy đếm số các từ của S.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là một xâu ký tự S được viết trên một dòng.
+T, S thỏa mãn ràng buộc: 1≤ T ≤100; 1≤ length(S)≤103.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+             
+
+Input:
+
+Output:
+
+2
+Print the number of words
+
+Print the number of words present in the string
+
+5
+9
+
+bai lam:
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	cin >>t;
+	while(t--){
+		string s;
+		cin.ignore();
+		getline (cin,s);
+		stringstream ss(s);
+		string hanh;
+		int dem=0;
+		while(ss>>hanh){
+			dem++;
+		}
+		cout<<dem<<endl;
+	}
+}
