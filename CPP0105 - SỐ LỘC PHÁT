@@ -1,0 +1,62 @@
+SỐ LỘC PHÁT
+
+Bài làm tốt nhất
+Một số được gọi là “lộc phát” nếu chỉ có các chữ số 0,6,8. Nhập vào một số nguyên dương không quá 9 chữ số, hãy kiểm tra xem đó có phải số lộc phát hay không.
+
+Input
+
+Dòng đầu là số bộ test, mỗi dòng tiếp theo ghi một số cần kiểm tra.
+
+Ouput
+
+Nếu đúng in ra YES, nếu sai in ra NO.
+
+Ví dụ
+
+Input
+
+Output
+
+3
+
+181
+
+88888
+
+608868
+
+NO
+
+YES
+
+YES
+
+bai lam:
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main(){
+		int t;
+		cin >>t;
+		while(t--){
+			int n;
+			cin >>n;
+			int dem=1;
+			while(n>0){
+				int a=n%10;
+				if(a!=0&&a!=6&&a!=8){
+					dem=0;
+				}
+				n/=10;
+		}
+			if(dem==1){
+				cout<<"YES";
+			}
+			if(dem==0){
+				cout<<"NO";
+			}
+			cout << endl;
+		}
+	return 0;
+}
