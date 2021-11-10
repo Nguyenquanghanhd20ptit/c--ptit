@@ -1,0 +1,51 @@
+CHỮ HOA – CHỮ THƯỜNG
+
+Bài làm tốt nhất
+Cho một chữ cái bất kỳ. Hãy kiểm tra xem đó là chữ hoa hay chữ thường. Nếu là chữ thường thì in ra chữ hoa, nếu là chữ hoa thì in ra chữ thường tương ứng. 
+
+Input
+
+Dòng đầu ghi số bộ test. Mỗi bộ test có duy nhất một chữ cái.
+
+Output
+
+Với mỗi bộ test, ghi ra kết quả trên một dòng.
+
+Ví dụ
+
+Input
+
+Output
+
+2
+
+B
+
+q
+
+b
+
+Q
+
+bai lam:
+#include<iostream>
+#include<iomanip>
+#include<math.h>
+using namespace std;
+int main (){
+	int t;
+	scanf("%d",&t);
+	while(t--){
+   	char c;
+	cin >> c;
+	if(c>= 65&& c<=90){
+		cout << char (c+32)<<endl;
+	}
+	else if(c>=97 && c<=122){
+		cout << char(c-32)<<endl;
+	}
+	else {
+	 	cout << c<<endl;
+	 }
+}
+}
