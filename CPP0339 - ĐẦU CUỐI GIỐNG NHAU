@@ -1,0 +1,48 @@
+ĐẦU CUỐI GIỐNG NHAU
+
+Bài làm tốt nhất
+Cho xâu ký tự S. Hãy đếm tất cả các xâu con của S có ký tự đầu và ký tự cuối giống nhau. Ví dụ với xâu “aba” ta có 4 xâu con bao gồm: “a”, “b”, “a”, “aba”.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là một xâu ký tự S được viết trên một dòng.
+T, S thỏa mãn ràng buộc: 1≤ T ≤100; 1≤ k ≤26;1≤ Length(S)≤103.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2
+abcab
+
+aba
+
+7
+4
+
+bai lam:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		string s;
+		cin>>s;
+		int b[256]={0};
+		long long x=s.length();
+			for(int i=0;i<s.length();i++){
+			b[s[i]]++;
+		}
+		for(int i=0;i<256;i++){
+			if(b[i]>1){
+              x+=b[i]*(b[i]-1)/2;
+			}
+		}
+		cout<<x<<endl;
+	}
+}
