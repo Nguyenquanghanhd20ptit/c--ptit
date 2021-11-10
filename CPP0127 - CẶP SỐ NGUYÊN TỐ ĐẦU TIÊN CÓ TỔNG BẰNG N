@@ -1,0 +1,68 @@
+CẶP SỐ NGUYÊN TỐ ĐẦU TIÊN CÓ TỔNG BẰNG N
+
+Bài làm tốt nhất
+Cho số tự nhiên N. Hãy tìm cặp số nguyên tố đầu tiên có tổng là N. Nếu không tồn tại cặp số nguyên tố có tổng bằng N, hãy đưa ra -1.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test gồm là một số N được ghi trên một dòng.
+T, N thỏa mãn ràng buộc: 1≤T≤100; 1≤ N ≤106.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2
+4
+
+8
+
+2 2
+
+3 5
+
+bai lam:
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int kt(int n){
+	if(n<2){
+		return 0;
+	}
+	for(int i = 2;i <= sqrt(n);i++){
+		if(n % i == 0){
+		 return 0;
+		}
+	}
+		return 1;
+}
+
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+	int a,dem=0;
+	cin >> a;
+	if(a%2==1){
+		if(kt(a-2)) printf("%d %d\n",2,a-2);
+		else printf("-1\n");
+	}else{
+	for(int i=2;i<=a;i++){
+	if(kt (i)==1 && kt (a-i)==1){
+		cout << i << " "<< a-i<<endl;
+		dem=1;
+		break;
+	}
+	}
+	if(dem==0){
+		cout << -1<<endl;
+	}
+}}
+
+	
+	return 0;
+}
