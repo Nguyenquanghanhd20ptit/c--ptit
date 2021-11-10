@@ -1,0 +1,47 @@
+ĐẢO TỪ
+
+Bài làm tốt nhất
+Cho xâu ký tự S. Nhiệm vụ của bạn là đảo ngược các từ trong S. Ví dụ S =  “I like this program very much”, ta nhận được kết quả là “much very program this like I”.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng bộ test T.
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là một xâu ký tự S.
+T, S thỏa mãn ràng buộc: 1≤ T ≤100; 1≤ Length(S)≤103.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2
+I like this program very much
+
+much very program this like I
+
+much very program this like I
+I like this program very much
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t;
+	cin>>t;
+	cin.ignore();
+	while(t--){
+		string s;
+		getline(cin,s);
+		vector<string> v;
+		string hanh;
+		stringstream ss(s);
+		while(ss>>hanh){
+			v.push_back(hanh);
+		}
+		for(int i=v.size()-1;i>=0;i--){
+			cout<<v[i]<<" ";
+		}
+		cout<<endl;
+	}
+}
