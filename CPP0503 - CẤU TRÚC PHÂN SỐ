@@ -1,0 +1,72 @@
+CẤU TRÚC PHÂN SỐ
+
+Bài làm tốt nhất
+Viết chương trình xây dựng cấu trúc Phân số gồm hai phần tử là tử số và mẫu số. Các giá trị đều nguyên dương và không quá 18 chữ số.
+
+Sau đó thực hiện nhập vào một phân số và in ra phân số đó ở dạng tối giản.
+
+Input
+
+Có hai số nguyên dương lần lượt là tử số và mẫu số.
+
+Output
+
+Ghi ra phân số tối giản như trong ví dụ
+
+Ví dụ
+
+Input
+
+Output
+
+123 456
+
+41/152
+
+ 
+
+Giới hạn thời gian: 2s
+
+Giới hạn bộ nhớ: 65536 Kb
+
+Bài tập này yêu cầu sử dụng hàm main cho sẵn như sau:
+
+C/C++
+int main() {
+	struct PhanSo p;
+	nhap(p);
+	rutgon(p);
+	in(p);
+	return 0;
+}
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+long long ucln(long long a,long long b){
+	if(b==0){
+		return a;
+	}
+	return ucln(b,a%b);
+}
+struct PhanSo{
+	long long tu,mau;
+};
+void nhap(PhanSo &p){
+	cin>>p.tu>>p.mau;
+}
+void rutgon(PhanSo &p){
+     long long l=ucln(p.tu,p.mau );
+     p.tu/=l;
+     p.mau/=l;
+}
+void in(PhanSo p){
+	cout<<p.tu<<"/"<<p.mau<<endl;
+}
+int main() {
+	struct PhanSo p;
+	nhap(p);
+	rutgon(p);
+	in(p);
+	return 0;
+}
