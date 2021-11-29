@@ -1,0 +1,62 @@
+ MA TRẬN NHỊ PHÂN
+
+Bài làm tốt nhất
+Cho ma trận A[] có N hàng và 3 cột, trong đó các vị trí là các giá trị nhị phân (0 hoặc 1). Hãy đếm xem có bao nhiêu hàng mà số lượng số 1 nhiều hơn số lượng số 0.
+
+Input
+
+Dòng đầu ghi số nguyên dương N (không quá 1000).
+
+N dòng tiếp theo, mỗi dòng ghi 3 giá trị nhị phân.
+
+Output
+
+Ghi ra số dòng mà số lượng số 1 nhiều hơn số lượng số 0.
+
+Ví dụ
+
+Input
+
+Output
+
+3
+
+1 1 0
+
+1 1 1
+
+1 0 0
+
+2
+
+2
+
+1 0 0
+
+0 1 1
+
+1
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+		int n,dem=0;
+		cin>>n;
+		int a[n][3];
+		for(int i=0;i<n;i++){
+			for(int j=0;j<3;j++){
+			cin>>a[i][j];
+		}
+	}
+		for(int i=0;i<n;i++){
+			int dem1=0;
+			for(int j=0;j<3;j++){
+			if(a[i][j]==1){
+				dem1++;
+				}
+			 }
+			 if(dem1>1) dem++;
+		}
+		cout<<dem;
+	}
