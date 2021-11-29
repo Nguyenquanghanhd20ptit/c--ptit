@@ -1,0 +1,85 @@
+CẤU TRÚC NHÂN VIÊN
+
+Bài làm tốt nhất
+Một nhân viên làm việc trong công ty được lưu lại các thông tin sau:
+
+Mã nhân viên: được gán giá trị là 00001
+Họ tên: Xâu ký tự không quá 40 chữ cái.
+Giới tính: Nam hoặc Nu
+Ngày sinh: đúng theo chuẩn dd/mm/yyyy
+Địa chỉ: Xâu ký tự không quá 100 chữ cái
+Mã số thuế: Dãy số có đúng 10 chữ số
+Ngày ký hợp đồng: đúng theo chuẩn dd/mm/yyyy
+Viết chương trình nhập một nhân viên (không nhập mã) và in ra màn hình thông tin của nhân viên đó.
+
+Input
+
+Gồm 6 dòng lần lượt ghi các thông tin theo thứ tự đã ghi trong đề bài. Không có mã nhân viên.
+
+Output
+
+Ghi ra đầy đủ thông tin nhân viên trên một dòng, các thông tin cách nhau đúng một khoảng trống.
+
+Ví dụ
+
+Input
+
+Nguyen Van Hoa
+
+Nam
+
+22/11/1982
+
+Mo Lao-Ha Dong-Ha Noi
+
+8333123456
+
+31/12/2013
+
+Output
+
+00001 Nguyen Van Hoa Nam 22/11/1982 Mo Lao-Ha Dong-Ha Noi 8333123456 31/12/2013
+
+ 
+
+ 
+
+Giới hạn thời gian: 2s
+
+Giới hạn bộ nhớ: 65536 Kb
+
+Bài tập này yêu cầu sử dụng hàm main cho sẵn như sau:
+
+C/C++
+int main(){
+    struct NhanVien a;
+    nhap(a);
+    in(a);
+    return 0;
+}
+
+bai lam:
+#include<bits/stdc++.h>
+#include<iomanip>
+using namespace std;
+struct NhanVien{
+	string ma="00001";
+	string ten,gt,ns,dc,ms,hd;
+};
+void nhap(NhanVien &a){
+	getline(cin,a.ten);
+	cin>>a.gt>>a.ns;
+	cin.ignore();
+	getline(cin,a.dc);
+	cin>>a.ms>>a.hd;
+}
+void in(NhanVien a){
+	cout<<a.ma<<" "<<a.ten<<" "<<a.gt<<" "<<a.ns<<" "<<a.dc<<" "<<a.ms<<" "<<a.hd;
+}
+int main(){
+    struct NhanVien a;
+    nhap(a);
+    in(a);
+    return 0;
+}
+
