@@ -1,0 +1,43 @@
+ LOẠI BỎ NGUYÊN ÂM
+
+Bài làm tốt nhất
+Cho một xâu ký tự S chỉ bao gồm các ký tự chữ cái và không có khoảng trống. Hãy loại bỏ các nguyên âm trong S.
+
+Kết quả được viết ra dưới dạng chữ cái viết thường của các phụ âm có mặt trong S, trước mỗi phụ âm ghi một ký tự dấu chấm ‘.’
+
+Các nguyên âm bao gồm: ‘A’, ‘E’, ‘I’, ‘O’, ‘U’, ‘Y’ (cả viết hoa và viết thường).
+
+Input
+
+Chỉ có xâu S, độ dài không quá 100.
+
+Output
+
+Ghi ra xâu kết quả
+
+Ví dụ
+
+Input
+
+Output
+
+HocVienCNBCVT
+
+.h.c.v.n.c.n.b.c.v.t
+
+
+bai lam:
+#include<bits/stdc++.h> 
+using namespace std;
+int main(){
+	string s;
+	cin >>s;
+	for(int i=0;i<s.length();i++){
+		s[i]=tolower(s[i]);
+	}
+	for(int i=0;i<s.length();i++){
+		if(s[i]!='a'&& s[i]!='e'&&s[i]!='i'&&s[i]!='o'&&s[i]!='u'&&s[i]!='y'){
+			cout<<"."<<s[i];
+		}
+	}
+}
