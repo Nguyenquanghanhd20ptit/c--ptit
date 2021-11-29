@@ -1,0 +1,85 @@
+TÍNH TỔNG HAI ĐỐI TƯỢNG PHÂN SỐ
+
+Bài làm tốt nhất
+Viết chương trình xây dựng class Phân số.
+
+Sau đó thực hiện nhập vào hai phân số p và q. Tính tổng p + q, rút gọn và in ra kết quả.
+
+Input
+
+Có bốn số nguyên dương lần lượt là tử số và mẫu số của p rồi đến q. Các giá trị không quá 9 chữ số.
+
+Output
+
+Ghi ra phân số tổng p + q ở dạng tối giản như trong ví dụ
+
+Ví dụ
+
+Input
+
+Output
+
+123 456 12 34
+
+1609/2584
+
+ 
+
+Giới hạn thời gian: 2s
+
+Giới hạn bộ nhớ: 65536 Kb
+
+Bài tập này yêu cầu sử dụng hàm main cho sẵn như sau:
+
+C/C++
+int main() {
+	PhanSo p(1,1), q(1,1);
+	cin >> p >> q;
+	cout << p + q;
+	return 0;
+}
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+long long ucln(long long a,long long b){
+	if(b==0){
+		return a;
+	}
+	return ucln(b,a%b);
+}
+class PhanSo{
+	private:
+		long long tu,mau;
+	public:
+		PhanSo(){
+			
+		}
+		PhanSo(long long tu,long long mau){
+			this->tu=tu;
+			this->mau =mau;
+		}
+	  friend istream& operator>>(istream &in,PhanSo &a){
+	  	in>>a.tu>>a.mau;
+	  	return in;
+	  }
+	  friend ostream& operator<<(ostream &out,PhanSo a){
+	  	cout<<a.tu<<"/"<<a.mau;
+	  	return cout;
+	  }
+	  friend PhanSo operator + (PhanSo a,PhanSo b){
+	  	PhanSo tong;
+	  	tong.tu=a.tu*b.mau+b.tu*a.mau;
+	  	tong.mau=a.mau*b.mau;
+	  	long long l=ucln(tong.tu,tong.mau);
+	  	tong.tu/=l;
+	  	tong.mau/=l;
+	  	return tong;
+	  }
+};
+int main() {
+	PhanSo p(1,1), q(1,1);
+	cin >> p >> q;
+	cout << p + q;
+	return 0;
+}
