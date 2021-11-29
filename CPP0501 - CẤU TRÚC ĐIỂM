@@ -1,0 +1,83 @@
+CẤU TRÚC ĐIỂM
+
+Bài làm tốt nhất
+Viết chương trình khai báo cấu trúc điểm trong không gian hai chiều với hai tọa độ x và y (kiểu số thực double).
+
+struct Point{
+
+     doube x, y;
+
+}
+
+Nhập hai điểm A và B. Tính khoảng cách giữa hai điểm A, B với độ chính xác 4 chữ số sau dấu phẩy.
+
+Input
+
+Dòng đầu ghi số bộ test, không quá 20.
+Mỗi bộ test có 4 số thực lần lượt là tọa độ của 2 điểm A và B, giá trị tuyệt đối không quá 1000.            
+Ouput
+
+Với mỗi bộ test, viết ra khoảng cách giữa 2 điểm với 4 chữ số sau dấu phẩy.
+
+Ví dụ
+
+Input
+
+Output
+
+2
+
+0 0 0 5
+
+0 199 5 6
+
+5.0000
+
+193.0648
+
+ 
+
+Giới hạn thời gian: 2s
+
+Giới hạn bộ nhớ: 65536 Kb
+
+Bài tập này yêu cầu sử dụng hàm main cho sẵn như sau:
+
+C/C++
+int main(){
+    struct Point A, B;
+    int t;
+    cin>>t;
+    while(t--){
+        input(A); input(B);
+        cout << fixed << setprecision(4) << distance(A,B) << endl;
+    }
+    return 0;
+}
+
+bai lam:
+#include<bits/stdc++.h>
+#include<iomanip>
+using namespace std;
+struct Point{
+	double x,y;
+};
+void input(Point &a){
+	cin>>a.x>>a.y;
+}
+double distance(Point a,Point b){
+	double c=1.0*b.x-a.x;
+	double d=1.0*b.y-a.y;
+	double kc=1.0*sqrt(c*c+d*d);
+	return kc;
+}
+int main(){
+    struct Point A, B;
+    int t;
+    cin>>t;
+    while(t--){
+        input(A); input(B);
+        cout << fixed << setprecision(4) << distance(A,B) << endl;
+    }
+    return 0;
+}
