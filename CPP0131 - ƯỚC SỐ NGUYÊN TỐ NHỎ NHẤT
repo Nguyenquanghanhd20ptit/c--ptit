@@ -1,0 +1,70 @@
+ ƯỚC SỐ NGUYÊN TỐ NHỎ NHẤT
+
+Bài làm tốt nhất
+Cho số tự nhiên N. Nhiệm vụ của bạn là hãy đưa ra ước số nguyên tố nhỏ nhất của các số từ 1 đến N.
+
+Ví dụ n=10, ta có được kết quả : 1 2 3 2 5 2 7 2 3 2.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test là một số N.
+T, N thỏa mãn ràng buộc 1≤T≤100; 1≤N ≤109.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2
+5
+10
+
+1 2 3 2 5
+1 2 3 2 5 2 7 2 3 2
+
+bai lam:
+#include<iostream>
+#include<math.h>
+using namespace std;
+void uoc(int n){
+	if(n==1){
+		cout<< 1<<" ";
+	}
+	for(int i=2;i<=sqrt(n);i++){
+		if(n%i==0){
+			cout << i<<" ";
+			break;
+		}
+	}
+		
+}
+int kt(int n){
+	if(n<2){
+		return 0;
+	}
+	for(int i=2;i<=sqrt(n);i++){
+		if(n%i==0){
+			return 0;
+		}
+	}
+	return 1;
+}
+	
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+		int n;
+		cin >> n;
+		for(int i=1;i<=n;i++){
+			if(kt(i)){
+				cout<< i<<" ";
+			} 
+			else uoc(i);
+		}
+		cout << endl;
+	}
+}
+
