@@ -1,0 +1,59 @@
+ ĐẾM SỐ CÓ BA ƯỚC SỐ
+
+Bài làm tốt nhất
+Cho số tự nhiên N. Nhiệm vụ của bạn là hãy đếm tất cả các số có đúng ba ước số. Ví dụ n=100, ta có các số 4.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test là một số N.
+T, N thỏa mãn rang buộc 1≤T≤100; 1≤N ≤1012.
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2
+
+50
+
+200
+
+4
+
+6
+
+bai lam:
+#include<iostream>
+#include<math.h>
+using namespace std;
+long long kt(long long n){
+	if(n<2){
+		return 0;
+	}
+	for(int i=2;i<=sqrt(n);i++){
+		if(n%i==0){
+			return 0;
+		}
+	}
+	return 1;
+}
+int main(){
+	int t;
+	cin >> t;
+	while(t--){
+	   long long n;
+	   cin >> n;
+	   int dem=0;
+	   for(int i=2;i<=sqrt(n);i++){
+		   if(kt(i)){
+			  dem++;
+		}
+	}
+	cout << dem<< endl;;
+}
+return 0;
+}
+
