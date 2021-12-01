@@ -1,0 +1,62 @@
+CHIA HẾT CHO BA SỐ NGUYÊN
+
+Bài làm tốt nhất
+Cho bốn số nguyên dương X, Y, Z và N. Hãy tìm số nguyên dương nhỏ nhất có N chữ số chia hết đồng thời cho X, Y, Z.  Ví dụ với X = 2, Y = 3, Z = 5, N = 4 ta tìm được số
+nguyên dương nhỏ nhất có 4 chữ số là 1020 chia hết cho cả 2, 3, 5.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T (T≤100).
+Những dòng kế tiếp đưa vào T bộ test. Mỗi bộ test là bộ bốn số X, Y, Z, N. Các số X, Y, Z, N thỏa mãn ràng buộc dưới đây:
+1≤ X, Y, Z ≤105; N≤18.
+
+Output:
+
+Đưa ra theo từng dòng kết quả mỗi test là số nguyên nhỏ nhất có N chữ số chia hết đồng thời cho X, Y, Z. Trong trường hợp không có số nguyên N chữ số thỏa mãn yêu cầu bài toán 
+đưa ra giá trị -1.
+Input
+
+Output
+
+3
+
+2  3  5  4
+
+4  5  6  3
+
+3  5  7  2
+
+1020
+
+120
+
+-1
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+int ucln(int a,int b){
+	if(b==0){
+		return a;
+	}
+	return ucln(b,a%b);
+}
+int main(){
+	int t;cin>>t;
+	while(t--){
+		int x,y,z,n; cin>>x>>y>>z>>n;
+		long long b1=x*y/ucln(x,y);
+		long long b=b1*z/ucln(b1,z);
+		long long m=pow(10,n-1);
+		if(pow(10,n)<=b) cout<<-1;
+		else if(b>=m && b<=pow(10,n)-1)  cout<<b;
+		else{
+			long long x=m/b;
+			if(m%b==0) cout<<m;
+			else{
+				cout<<(x+1)*b;
+			}
+		}
+		cout<<endl;
+	}
+}
