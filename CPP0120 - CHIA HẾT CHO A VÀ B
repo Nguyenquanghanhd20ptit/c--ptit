@@ -1,0 +1,41 @@
+ CHIA HẾT CHO A VÀ B
+
+Bài làm tốt nhất
+Cho bốn số M, N, A, B. Nhiệm vụ của bạn là hãy đếm tất cả các số trong khoảng [M, N] chia hết cho các số A, B.
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi bộ test gồm 4 số M, N, A, B.
+T, M, N, A, B thỏa mãn rang buộc 1≤T≤100; 1≤M, N ≤105; 1≤A, B ≤500;
+Output:
+
+Đưa ra kết quả mỗi test theo từng dòng.
+Input:
+
+Output:
+
+2
+5 11 4 6
+3 1000 5 9
+
+2
+289
+
+bai lam:
+#include<iostream>
+using namespace std;
+int main () {
+	int t;
+	cin>>t;
+	while(t--) {
+		int a,b,c,d;
+		cin>>a>>b>>c>>d;
+		int dem=0;
+		for(int i=a;i<=b;i++) {
+			if(i%c==0 || i%d==0){dem++;}
+			}
+			cout<<dem;
+			cout<<endl;
+		}
+	}
