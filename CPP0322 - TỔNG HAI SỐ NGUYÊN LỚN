@@ -1,0 +1,58 @@
+TỔNG HAI SỐ NGUYÊN LỚN
+
+Bài làm tốt nhất
+Cho hai số rất lớn X và Y được biểu diễn như hai xâu ký tự. Nhiệm vụ của bạn là tìm X+Y?
+
+Input:
+
+Dòng đầu tiên đưa vào số lượng test T.
+Những dòng kế tiếp đưa vào các bộ test. Mỗi test gồm hai dòng: dòng thứ nhất đưa xâu X; dòng tiếp theo đưa vào xâu Y.
+T, X, Y  thỏa mãn ràng buộc : 1≤T≤100; 0≤length(X), length(Y)≤103.
+Output:
+
+Đưa ra số kết quả mỗi test theo từng dòng.
+                     Ví dụ:
+
+Input:
+
+Output:
+
+1
+12
+
+198111
+
+198123
+
+bai lam:
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int t; cin>>t;
+	while(t--){
+		string s1,s2;
+	    cin>>s1>>s2;
+	    int tong;
+	    vector<int> v;
+	    while(s1.length()>s2.length()){
+	    	s2="0"+s2;
+		}
+		while(s1.length()<s2.length()){
+			s1="0"+s1;
+		}
+		for(int i=s1.length()-1;i>=1;i--){
+			tong=s1[i]-'0'+s2[i]-'0';
+			if(tong>9){
+				tong=tong-10;
+				s1[i-1]=s1[i-1]+1;
+			}
+			v.push_back(tong);
+		}
+		tong=s1[0]-'0'+s2[0]-'0';
+		v.push_back(tong);
+		for(int i=v.size()-1;i>=0;i--){
+			cout<<v[i];
+		}
+  cout<<endl;
+	}
+}
